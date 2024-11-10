@@ -5,6 +5,7 @@ const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 const hbs = require('hbs')
 const app = express()
+const port = process.env.PORT || 3000
 
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
@@ -79,6 +80,6 @@ app.get('*',(req,res)=>{
     res.send("damn")
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('server started on port 3000')
 })
