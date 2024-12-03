@@ -3,7 +3,7 @@ const request = require('request')
 const forecast = (querylat,querylong,callback) => {
 
     const root = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline'
-    const key = '9MCSGPENCU8K8MKG5VBD754T9'
+    const key = process.env.weather_api
     const query = (Math.round(querylat * 100) / 100).toFixed(2) + "," + (Math.round(querylong * 100) / 100).toFixed(2)
     const querysafe = query.replace(/ /g, '%20');
     const url = root + '/' + querysafe + "?include=days&unitGroup=metric&key=" + key + '&contentType=json'
