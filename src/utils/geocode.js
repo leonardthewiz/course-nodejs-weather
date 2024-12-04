@@ -2,7 +2,7 @@ const request = require('request')
 
 const geocode = (query,callback) => {
     const root = 'https://api.positionstack.com/v1/forward'
-    const key = 'c3f840d5edff62c9b08f0c47c063953d'
+    const key = process.env.geocode_api
     const querysafe = query.replace(/ /g, '%20');
     const url = root + '?access_key=' + key + '&query=' + querysafe
 
